@@ -6,19 +6,15 @@ import java.util.stream.Collectors;
 
 public class NumbersCalculator {
     public static void main(String[] args) {
-        getNumbersDivisibeBy3(List.of(3, 6, 9, 10, 15, 17, 18, 20, 21));
-
+        getNumbersDivisibeBy3(List.of(3, 5, 9, 11, 15, 17, 18, 20, 25));
     }
 
-    public static   Set<Integer> getNumbersDivisibeBy3(List<Integer> numbers) {
+    public static List<Integer> getNumbersDivisibeBy3(List<Integer> numbers) {
+        List<Integer> listOfFilterdNumbers = numbers.stream()
+                .filter(number -> number % 3 == 0)
+                .collect(Collectors.toList());
+        System.out.println("Numbers are divisible by 3: " + listOfFilterdNumbers);
 
-
-            Set<Integer> setOfFilterdNumbers = numbers.stream()
-                    .filter(number -> number % 3 == 0)
-                    .collect(Collectors.toSet());
-            System.out.println("Numbers are divisible by 3: " + setOfFilterdNumbers);
-
-            return setOfFilterdNumbers;
-
+        return listOfFilterdNumbers;
     }
 }

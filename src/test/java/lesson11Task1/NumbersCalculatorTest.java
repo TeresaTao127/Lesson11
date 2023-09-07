@@ -10,11 +10,8 @@ class NumbersCalculatorTest {
 
     @org.junit.jupiter.api.Test
     void shouldReturnTrueForCalculateNumbersBy3() {
-        Assertions.assertTrue(NumbersCalculator.calculateNumbersBy3(List.of(3, 6, 9, 15, 18, 21)));
+        List<Integer> numbers = List.of(3, -100, 6, 8, 9, 16, 128, 210);
+        List<Integer> expectedResults = List.of(3, 6, 9);
+        Assertions.assertEquals(expectedResults, NumbersCalculator.getNumbersDivisibeBy3(numbers));
     }
 
-    @org.junit.jupiter.api.Test
-    void shouldReturnFalseForCalculateNumbersBy3() {
-        Assertions.assertFalse(NumbersCalculator.calculateNumbersBy3(List.of(4, 8, 10, 14, 17, 22)));
-    }
-}
